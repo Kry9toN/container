@@ -39,7 +39,9 @@ RUN set -ex \
 #     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
 #     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
 #     && apt-get -qq update \
-    && apt-get -qq -y install chromium-browser \
+    && wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser_85.0.4183.83-0ubuntu0.20.04.2_arm64.deb \
+    && dpkg -i chromium-browser_85.0.4183.83-0ubuntu0.20.04.2_arm64.deb \
+    && rm -rf chromium-browser_85.0.4183.83-0ubuntu0.20.04.2_arm64.deb \
 
     # Install chromedriver
     && wget -N https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -P ~/ \
