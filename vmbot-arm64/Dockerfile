@@ -36,7 +36,7 @@ RUN set -ex \
         zip \
 
     # Install Google Chrome
-    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
+    && echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt-get -qq update \
     && apt-get -qq -y install google-chrome-stable \
