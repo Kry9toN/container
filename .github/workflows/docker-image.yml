@@ -19,6 +19,9 @@ jobs:
         DOCKER_IMAGE=${{ secrets.DOCKER_USERNAME }}/vmbot
         VERSION=arm64
         TAGS="${DOCKER_IMAGE}:${VERSION}"
+        # Set output parameters.
+        echo ::set-output name=tags::${TAGS}
+        echo ::set-output name=docker_image::${DOCKER_IMAGE}
     - name: Set up QEMU
       uses: docker/setup-qemu-action@master
       with:
