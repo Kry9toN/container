@@ -9,9 +9,14 @@ jobs:
 
   build:
 
-    runs-on: [self-hosted, linux, ARM64]
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build vmbot Image
-      run: docker build . --file ./vmbot-arm64/Dockerfile --tag kry9ton/vmbot:arm64 && docker push kry9ton/vmbot:arm64
+    - uses: uraimo/run-on-arch-action@v2.0.5
+      name: Build vmbot Image
+      id: runcmd
+      with:
+        arch: aarch64
+        distro: ubuntu18.04
+        run: docker build . --file ./vmbot-arm64/Dockerfile --tag kry9ton/vmbot:arm64 && docker push kry9ton/vmbot:arm64
