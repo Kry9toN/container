@@ -28,6 +28,7 @@ RUN set -ex \
         postgresql \
         pv \
         sudo \
+        snapd \
         unar \
         unrar-free \
         unzip \
