@@ -18,7 +18,7 @@ RUN apt-get update
 RUN apt-get install -y \
   build-essential \
   libgc-dev \
-  libboost1.55-all-dev \
+  libboost1.74-all-dev \
   graphviz \
   autoconf \
   git \
