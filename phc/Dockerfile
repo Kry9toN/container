@@ -22,7 +22,7 @@ RUN apt-get install -y \
   graphviz \
   autoconf \
   git \
-  php5-cli
+  php8-cli
 
 WORKDIR /opt
 
