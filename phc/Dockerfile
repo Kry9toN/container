@@ -9,7 +9,7 @@
 #	  php2py
 
 
-FROM ubuntu:14.04
+FROM ubuntu:focal
 
 ENV DEBIAN_FRONTEND=noninteractive 
 
