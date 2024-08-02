@@ -1,7 +1,7 @@
 FROM ekidd/rust-musl-builder:nightly-2020-07-12 AS builder
 RUN sudo apt update && sudo apt install -y upx
 ENV ROCKET_ENV=production
-ADD . ./
+ADD ./world-time-api/. ./
 RUN sudo chown -R rust:rust /home/rust
 RUN cargo build --release
 
