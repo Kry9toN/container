@@ -1,4 +1,4 @@
-FROM ekidd/rust-musl-builder:nightly-2021-12-23 AS builder
+FROM nwtgck/rust-musl-builder:latest AS builder
 RUN sudo apt update && sudo apt install -y upx
 ENV ROCKET_ENV=production
 ADD ./world-time-api/. ./
