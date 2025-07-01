@@ -19,4 +19,7 @@ ENV ROCKET_ENV=production \
     ROCKET_LOG=off
 RUN adduser -D -u 1001 runner; chown -R 1001 /usr/local/share/world-time-api
 USER 1001
+
+EXPOSE 8000
+
 ENTRYPOINT ["./world-time-api"]
